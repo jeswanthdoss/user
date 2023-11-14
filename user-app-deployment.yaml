@@ -14,20 +14,20 @@ spec:
     spec:
       containers:
         - name: user-app-container
-          image: jeswanthdoss/user-app:1.0
+          image: jeswanthdoss/user-app:latest
           ports:
             - containerPort: 8081
           env:   # Setting Enviornmental Variables
-            - name: DB_HOST   # Setting Database host address from configMap
+            - name: MYSQL_HOST   # Setting Database host address from configMap
               value: mysql
-            - name: DB_PORT
+            - name: MYSQL_PORT
               value: "3306"
             - name: DB_NAME  # Setting Database name from configMap
               value: user_schema
-            - name: DB_USER  # Setting Database username from Secret
+            - name: MYSQL_USER  # Setting Database username from Secret
               value: root
-            - name: DB_PASSWORD # Setting Database password from Secret
-              value: password
+            - name: MYSQL_PASSWORD # Setting Database password from Secret
+              value: elephant
 
 ---
 
